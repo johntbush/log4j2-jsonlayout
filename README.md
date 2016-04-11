@@ -4,11 +4,11 @@ Provides a log4j2 JsonLayout that outputs the contextMap data as a proper object
 
 This issue is discussed here: See https://issues.apache.org/jira/browse/LOG4J2-623.  
 
-The serialization solution inspired from http://www.cowtowncoder.com/blog/archives/2013/10/entry_482.html.  This is where I learned `@JsonFormat(shape= JsonFormat.Shape.OBJECT)` will tell  Jackson to serialize Maps as Objects.
+The serialization solution inspired from http://www.cowtowncoder.com/blog/archives/2013/10/entry_482.html.  This is where I learned `@JsonFormat(shape= JsonFormat.Shape.OBJECT)` will tell Jackson to serialize Maps as Objects.
 
 In order to remain backwards compatible with the old JSON syntax, a new attribute called "context" is used.  
 
-Here is what the all format looked like:
+Here is what the old format looked like:
 
 ```
 {
@@ -61,7 +61,7 @@ Here is what the new format looks like:
 
 ##  Using this JsonLayout
 
-To use simply include the layout in your log4j2 config like this:
+To use simply include the layout in your various appenders in your log4j2 config like this:
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
