@@ -82,7 +82,7 @@ To use simply include the layout in your various appenders in your log4j2 config
 
 ## Implementation
 
-This issue is discussed here: See https://issues.apache.org/jira/browse/LOG4J2-623.  Unfortunately, the community decided to not support proper Json encoding and is worried about backwards capitably.  They are also Java nazi's and put final all over the place, curse you Java nazis!  This forced me to copy a few classes, else do some bytecode manipulation that I really didn't want to do, to avoid bringing in more dependencies.  What's more is they have non public Abstract classes ? What's the point of something being Abstract if you don't let others use it ?  Anyway I digress...
+This issue is discussed here: See https://issues.apache.org/jira/browse/LOG4J2-623.  Unfortunately, the community decided to not support proper Json encoding and is worried about backwards compatibility.  They are also Java nazi's and put final all over the place, curse you Java nazis!  This forced me to copy a few classes, else do some bytecode manipulation that I really didn't want to do, to avoid bringing in more dependencies.  What's more is they have non public Abstract classes ? What's the point of something being Abstract if you don't let others use it ?  Anyway I digress...
 
 So any way I had to copy a few classes and then I simply wrapped `LogEvent` in order to expose a new context attribute that would be serialized correctly.
 
@@ -104,4 +104,5 @@ public class JsonLogEvent implements LogEvent {
     public void setContext(Map context) {
         this.context = context;
     }
+    ...
 ```
