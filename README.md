@@ -1,4 +1,4 @@
-h1. Motiviation
+## Motiviation
 
 Provides a log4j2 JsonLayout that outputs the contextMap data as a proper object not an array of key/values, which is really crappy for querying from elasticsearch, jq, or probably anything that is used to dealing with JSON semantics.  
 
@@ -59,7 +59,7 @@ Here is what the new format looks like:
 }
 ```
 
-h2.  Using
+##  Using this JsonLayout
 
 To use simply include the layout in your log4j2 config like this:
 
