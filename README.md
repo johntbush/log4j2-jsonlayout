@@ -2,7 +2,7 @@ Provides a log4j2 JsonLayout that outputs the contextMap data as a proper object
 
 See https://issues.apache.org/jira/browse/LOG4J2-623
 
-Solution inspired from http://www.cowtowncoder.com/blog/archives/2013/10/entry_482.html.  This is where I learned @JsonFormat(shape= JsonFormat.Shape.OBJECT) will tell  Jackson to serialize Maps as Objects.
+Solution inspired from http://www.cowtowncoder.com/blog/archives/2013/10/entry_482.html.  This is where I learned `@JsonFormat(shape= JsonFormat.Shape.OBJECT)` will tell  Jackson to serialize Maps as Objects.
 
 In order to remain backwards compatible with the old JSON syntax, a new attribute called "context" is used.  
 
